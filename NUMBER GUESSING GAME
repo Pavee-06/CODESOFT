@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    int secretNumber, guess;
+
+    // Seed the random number generator
+    srand(time(0));
+
+    // Generate a random number between 1 and 100
+    secretNumber = rand() % 100 + 1;
+
+    cout << " Guess the Number Game!" << endl;
+    cout << "I have chosen a number between 1 and 100." << endl;
+
+    // Loop until the correct guess
+    do {
+        cout << "Enter your guess: ";
+        cin >> guess;
+
+        if (guess > secretNumber) {
+            cout << "Too high! Try again.\n";
+        } else if (guess < secretNumber) {
+            cout << "Too low! Try again.\n";
+        } else {
+            cout << " Congratulations! You guessed the correct number.\n";
+        }
+    } while (guess != secretNumber);
+
+    return 0;
+}
